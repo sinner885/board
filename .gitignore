@@ -1,1 +1,6 @@
 .venv
+.env
+*/migrations
+/media
+/static
+__pycache__
