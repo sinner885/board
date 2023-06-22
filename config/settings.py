@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
 ]
 
 # packege
@@ -55,14 +56,15 @@ INSTALLED_APPS += [
     'django_filters',
     "corsheaders",
     'drf_spectacular',
-    'djoser'
+    'djoser',
+    
 ]
 
 # app
 INSTALLED_APPS += [
     'api',
     'common',
-    
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +118,9 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+
 
 # django rest framework
 REST_FRAMEWORK = {
@@ -258,3 +263,8 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=1),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=7),
 }
+
+AUTH_USER_MODEL = "users.CustomUser"
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
